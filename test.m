@@ -1,10 +1,10 @@
-T = 2*pi;
+T = 1;
 Fs = 24000;
 N = T * Fs;
-t = 0 : 1/Fs : T;
+t = -T : 1/Fs : T;
 Fn = 800;
-y = cos(10 * Fn * 2 * pi * t - 10);
-x = cos(2 * Fn * 2 * pi * t);
+y = 10*cos(Fn * 2 * pi * t - 10);
+x = 2*cos(Fn * 2 * pi * t);
 
-[h, to] = impulse_response( x, y, Fs );
+[h, t] = impulse_response( x, y, Fs );
 
